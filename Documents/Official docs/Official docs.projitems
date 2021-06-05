@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>635393b6-36f7-4134-a1b0-693443136481</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Official_docs</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Ali Nasri @1400-03-05\990905_SampleStorage.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Ali Nasri @1400-03-05\Response From WebServer JSON Format.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Ali Nasri @1400-03-05\فرآیند تحویل اقلام.jpeg" />
+    <Content Include="$(MSBuildThisFileDirectory)Ali Nasri @1400-03-05\فرآیند دریافت اقلام.jpeg" />
+    <Content Include="$(MSBuildThisFileDirectory)Ali Nasri @1400-03-05\فرآیند دریافت و تحویل اقلام.jpeg" />
+  </ItemGroup>
+</Project>

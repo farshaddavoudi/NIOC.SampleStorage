@@ -1,0 +1,59 @@
+https://v-bpms.niocexp.ir/rest/s1/nioc/NiocPersonPositions?bpmsUsername=a.nasri&enable=Enable
+
+
+
+{
+    "personPositions": [
+        {
+            "organizationTitle": "سامانه اطلاعات بالادستی",
+            "relEnableEnumId": "Enable",
+            "enableDescription": "فعال",
+            "defaultInboxCount": 1,
+            "defaultInboxDescription": "فعال",
+            "designationTypeDescription": "دائم",
+            "personPartyId": "Prn0063515441",
+            "personRegisterNumber": "579762",
+            "personNationalCode": "0063515441",
+            "personFirstName": "علی",
+            "personLastName": "نصری نظیف",
+            "personDomainUserName": "NIOCEXPIR\\a.nasri",
+            "personEnableEnumId": "Enable",
+            "personJobKindEnumId": "1",
+            "workStatusEnumId": "01",
+            "lastPersonalGrade": "16",
+            "personJobKindDescription": "روز کار",
+            "personEnableDescription": "فعال",
+            "bpmsUsername": "a.nasri",
+            "deputyId": "Org16101000000001",
+            "deputyName": "مدیریت اکتشاف",
+            "departmentId": "Org16101004000001",
+            "departmentName": "فن آوری اطلاعات و سامانه اطلاعات بالادستی",
+            "isDeputy": "false",
+            "isDepartment": "false",
+            "isBoss": 0,
+            "fromDateJalali": "1399/07/30",
+            "lastUpdatedStamp": 1597131272707,
+            "partyId": "Org16101004200001",
+            "organizationName": "رئیس سامانه اطلاعات بالادستی",
+            "organizationChartTypeEnumId": "DPI",
+            "postGradeEnumId": "17",
+            "sensitiveEnumId": "No",
+            "onsiteEnumId": "No",
+            "registrationDate": 1597087800000,
+            "pseudoId": "Org16101004200001",
+            "partyTypeEnumId": "PtyOrganization",
+            "ownerPartyId": "Org16101004000001",
+            "partyRelationshipId": "101021",
+            "relationshipTypeEnumId": "PrtEmployee",
+            "fromPartyId": "Prn0063515441",
+            "fromRoleTypeId": "JobHolder",
+            "toPartyId": "Org16101004200001",
+            "toRoleTypeId": "OrgInternal",
+            "fromDate": 1603348020000,
+            "enableEnumId": "Enable",
+            "designationTypeEnumId": "Permanent",
+            "defaultInboxEnumId": "Enable",
+            "authorityLevelTypeEnumId": "_NA_"
+        }
+    ]
+}

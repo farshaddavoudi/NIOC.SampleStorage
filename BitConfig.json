@@ -1,0 +1,19 @@
+﻿{
+  "BitCodeGeneratorConfigs": {
+    "BitCodeGeneratorMappings": [
+      {
+        "GenerationType": "CSharpHttpClient",
+        "Route": "SampleStorage",
+        "DestinationFileName": "Bit\\NIOC.SampleStorage.Model.Context",
+        "SourceProjects": [
+          {
+            "Name": "NIOC.SampleStorage.Server.Api"
+          }
+        ],
+        "DestinationProject": {
+          "Name": "NIOC.SampleStorage.Client.Service"
+        }
+      }
+    ]
+  }
+}

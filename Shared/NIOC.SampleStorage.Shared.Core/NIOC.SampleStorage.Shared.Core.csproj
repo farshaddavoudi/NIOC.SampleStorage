@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+	<ItemGroup>
+    <PackageReference Include="DNTPersianUtils.Core" Version="4.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Bit.Universal.AutoMapper" Version="7.3.0" />
+    <PackageReference Include="Bit.Universal.Model" Version="7.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+    <PackageReference Include="Humanizer.Core" Version="2.10.1" />
+  </ItemGroup>
+
+</Project>

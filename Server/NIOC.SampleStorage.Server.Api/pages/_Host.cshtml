@@ -1,0 +1,118 @@
+﻿@page "/"
+
+@using Microsoft.AspNetCore.Authorization
+@using NIOC.SampleStorage.Shared.App
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@attribute [AllowAnonymous]
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>@(AppMetadata.ApplicationPersianName)</title>
+    <base href="~/" />
+    <link href="@($"{AppConstants.AppCDNBaseURL}/css/bootstrap/bootstrap.rtl.min.css")" rel="stylesheet" asp-append-version="true" />
+    <link href="https://cdn.app.ataair.ir/fonts/FontAwesome.Pro.5.13.0.Web/css/all.min.css" rel="stylesheet" asp-append-version="true">
+    <link rel="stylesheet" href="_content/Telerik.UI.for.Blazor/css/kendo-theme-default/all.css" asp-append-version="true" />
+    <link rel="stylesheet" href="_content/Radzen.Blazor/css/default-base.css" asp-append-version="true">
+    <link href="_content/Blazored.Toast/blazored-toast.min.css" rel="stylesheet" asp-append-version="true" />
+    <link href="_content/Blazored.Modal/blazored-modal.css" rel="stylesheet" asp-append-version="true" />
+    <link href="@($"{AppConstants.AppCDNBaseURL}/css/ata-layout/sidebar-nav.min.css")" rel="stylesheet" asp-append-version="true" />
+    <link href="@($"{AppConstants.AppCDNBaseURL}/css/ata.css")" rel="stylesheet" asp-append-version="true" />
+    <link href="@($"{AppConstants.AppCDNBaseURL}/css/ata-layout/custom.css")" rel="stylesheet" asp-append-version="true" />
+    <link href="@($"{AppConstants.AppCDNBaseURL}/css/ata-layout/inside.css")" rel="stylesheet" asp-append-version="true" />
+    <link href="_content/Blazor.PersianDatePicker/datepicker.css" rel="stylesheet" asp-append-version="true" />
+    <link href="styles/Cdn/feri-custom.css" rel="stylesheet" asp-append-version="true" />
+    <link href="styles/app.css" rel="stylesheet" asp-append-version="true" />
+    <link href="NIOC.SampleStorage.Client.Web.styles.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<body>
+    @*<component type="typeof(App)" render-mode="WebAssembly" />*@
+
+    <app>
+        <div id="app-install-loading" class="container-fluid" style="display: none; height: 100vh">
+            <div style="direction: ltr; font-family: roboto, iranyekan;height: 88vh; display: flex;justify-content: center;align-items: center;">
+                <div class="row" style="width:100%">
+                    <div class="col-1"></div>
+                    <div class="col-10 text-center">
+                        <p id="appLoadingTitle" style="direction: rtl">
+                            در حال بارگذاری اولیه سامانه
+                        </p>
+                        <div class="progress" style="height: 25px; direction: rtl">
+                            <div id="progressbar" class="progress-bar progress-bar-striped active" role="progressbar" style="width: 0"></div>
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="app-initial-loading" class="make-center-loader-wrapper" style="height: 100vh">
+            <div class="preloader">
+                <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
+                </svg>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            // Update version in every deployment
+            const applicationVersion = "@AppMetadata.AppVersion";
+
+            var appVersion = localStorage.getItem("@(nameof(AppMetadata.AppVersion))");
+
+            if (appVersion === applicationVersion) {
+
+                document.getElementById("app-install-loading").style.display = "none";
+                document.getElementById("app-initial-loading").style.display = "flex";
+            } else {
+                document.getElementById("app-install-loading").style.display = "block";
+                document.getElementById("app-initial-loading").style.display = "none";
+
+                if (appVersion) {
+                    document.getElementById("appLoadingTitle").innerHTML = "در حال بروزرسانی سامانه";
+                }
+
+                const progressbar = document.getElementById("progressbar");
+
+                var i = 0;
+
+                window.loadResourceCallback = (total, name, response) => {
+                    if (name.endsWith('.dll')) {
+                        i++;
+                        const value = parseInt((i * 100.0) / total);
+                        const pct = value + '%';
+
+                        progressbar.style.width = pct;
+                        console.log(i + '/' + total + ' (' + pct + ') ' + name);
+                    }
+                }
+
+                localStorage.setItem("@(nameof(AppMetadata.AppVersion))", applicationVersion);
+            }
+        </script>
+    </app>
+
+    <div id="blazor-error-ui">
+        متاسفانه خطایی روی داده است. لطفا صفحه را مجدد بارگزاری نمایید. در صورت عدم رفع مشکل با پشتیبانی تماس بگیرید
+        <a href="" class="reload btn btn-sm">بارگزاری مجدد صفحه</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    @*<script src="_framework/blazor.webassembly.js" asp-append-version="true"></script>*@
+    <script src="scripts/blazor.webassembly.modified.js" asp-append-version="true"></script>
+    <script src="_content/Blazor.PersianDatePicker/datepicker.min.js" asp-append-version="true"></script>
+    <script src="_content/Telerik.UI.for.Blazor/js/telerik-blazor.js" asp-append-version="true"></script>
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js" asp-append-version="true"></script>
+    <script src="_content/Microsoft.AspNetCore.Components.Web.Extensions/headManager.js" asp-append-version="true"></script>
+    <script src="_content/Blazored.Modal/blazored.modal.js" asp-append-version="true"></script>
+    <script src="scripts/blazor.extensions.js" asp-append-version="true"></script>
+    <script src="@($"{AppConstants.AppCDNBaseURL}/js/ata.js")" asp-append-version="true"></script>
+    <script src="scripts/app.js" asp-append-version="true"></script>
+</body>
+</html>
