@@ -13,8 +13,4 @@
 	<ProjectReference Include="..\..\Shared\NIOC.SampleStorage.Shared.App\NIOC.SampleStorage.Shared.App.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Entities\AuditLog\" />
-  </ItemGroup>
-
 </Project>

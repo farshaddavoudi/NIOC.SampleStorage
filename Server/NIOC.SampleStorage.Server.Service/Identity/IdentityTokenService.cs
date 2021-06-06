@@ -15,7 +15,7 @@ namespace NIOC.SampleStorage.Server.Service.Identity
         {
             return await Repository
                 .GetAllWithoutQueryFilter()
-                .Where(token => !token.IsArchived)
+                .Where(token => token.IsArchived == false)
                 //.Cacheable()
                 .FirstOrDefaultAsync(token => token.Id == id, cancellationToken);
         }
