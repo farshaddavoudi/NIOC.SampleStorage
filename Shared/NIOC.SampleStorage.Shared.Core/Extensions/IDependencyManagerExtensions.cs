@@ -5,7 +5,6 @@ using System.Reflection;
 
 namespace NIOC.SampleStorage.Shared.Core.Extensions
 {
-    // ReSharper disable once UnusedMember.Global
     // ReSharper disable once InconsistentNaming
     public static class IDependencyManagerExtensions
     {

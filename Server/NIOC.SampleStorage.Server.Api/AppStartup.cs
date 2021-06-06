@@ -104,7 +104,7 @@ namespace NIOC.SampleStorage.Server.Api
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = AppMetadata.ApplicationPersianName, Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = AppMetadata.ApplicationPersianFullName, Version = "v1" });
             });
 
 
@@ -143,7 +143,7 @@ namespace NIOC.SampleStorage.Server.Api
                 aspNetCoreApp.UseRouting();
 
                 aspNetCoreApp.UseSwagger();
-                aspNetCoreApp.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{AppMetadata.ApplicationEnglishName} v1"));
+                aspNetCoreApp.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{AppMetadata.ApplicationEnglishFullName} v1"));
             });
 
             dependencyManager.RegisterAspNetCoreSingleSignOnClient();

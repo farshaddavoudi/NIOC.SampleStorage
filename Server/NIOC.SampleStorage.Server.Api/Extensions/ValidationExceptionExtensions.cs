@@ -18,9 +18,9 @@ namespace NIOC.SampleStorage.Server.Api.Extensions
             {
                 errorWrapper = new ModelErrorWrapper
                 {
-                    Errors = new List<ATAModelError>
+                    Errors = new List<NIOCModelError>
                     {
-                        new ATAModelError
+                        new NIOCModelError
                         {
                             Messages = new List<string>
                             {

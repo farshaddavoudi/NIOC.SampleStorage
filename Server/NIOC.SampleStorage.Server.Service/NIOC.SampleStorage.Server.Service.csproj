@@ -4,10 +4,19 @@
 	<TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="NIOCSSO\Contracts\INIOCAuthService.cs~RF823e6b2.TMP" />
+    <None Remove="NIOCSSO\Dtos\DomainUsernameRequestDto.cs~RF81bef83.TMP" />
+    <None Remove="NIOCSSO\Dtos\DomainUsernameRequestDto.cs~RF81cea10.TMP" />
+    <None Remove="NIOCSSO\Dtos\UserSSODataRequestDto.cs~RF81ede00.TMP" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="Bit.Server.Data.EntityFrameworkCore" Version="7.3.0" />
 		<PackageReference Include="Dapper" Version="2.0.90" />
 		<PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+		<PackageReference Include="MimeTypeMapOfficial" Version="1.0.17" />
 	</ItemGroup>
 
   <ItemGroup>

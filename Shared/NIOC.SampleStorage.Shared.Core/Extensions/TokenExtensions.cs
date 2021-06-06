@@ -11,6 +11,7 @@ namespace NIOC.SampleStorage.Shared.Core.Extensions
         public static PrimarySidDto? GetJwtTokenProps(this string jwtToken)
         {
             string[] token = jwtToken.Split(".");
+
             var decodedToken = ToBase64String(token[1]);
 
             JToken jToken = JToken.Parse(decodedToken);

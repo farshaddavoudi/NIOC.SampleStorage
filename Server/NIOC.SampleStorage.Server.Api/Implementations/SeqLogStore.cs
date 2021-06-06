@@ -21,7 +21,7 @@ namespace NIOC.SampleStorage.Server.Api.Implementations
         public void SaveLog(LogEntry logEntry)
         {
             Log.Logger = new LoggerConfiguration()
-                .Enrich.WithProperty("ApplicationName", AppMetadata.SolutionName)
+                .Enrich.WithProperty("ApplicationName", AppMetadata.ApplicationKeyName)
                 .Enrich.FromLogContext()
                 .Enrich.WithExceptionDetails()
                 .Enrich.WithMachineName()

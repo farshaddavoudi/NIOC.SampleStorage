@@ -6,10 +6,10 @@ namespace NIOC.SampleStorage.Shared.App
     {
         public static readonly string AppVersion = Assembly.GetExecutingAssembly().GetName().Version!.ToString(3);
 
-        public static readonly string ApplicationPersianName = "سامانه‌ی انباری نمونه‌ها";
+        public static readonly string ApplicationPersianFullName = "سامانه‌ی انباری نمونه‌ها";
 
-        public static readonly string ApplicationEnglishName = "NIOC Sample Storage";
+        public static readonly string ApplicationEnglishFullName = "NIOC Sample Storage";
 
-        public static readonly string SolutionName = "NIOC.SampleStorage";
+        public static readonly string ApplicationKeyName = "SampleStorage";
     }
 }

@@ -17,8 +17,8 @@ namespace NIOC.SampleStorage.Shared.Core.Exceptions
 
         public ValidationException(params (string propName, string[] errorMsgs)[] errors) : this(new ModelErrorWrapper
         {
-            Errors = new List<ATAModelError>(errors
-                .Select(e => new ATAModelError
+            Errors = new List<NIOCModelError>(errors
+                .Select(e => new NIOCModelError
                 {
                     Property = e.propName,
                     Messages = e.errorMsgs

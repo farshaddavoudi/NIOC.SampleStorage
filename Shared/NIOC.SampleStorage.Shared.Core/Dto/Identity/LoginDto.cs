@@ -6,13 +6,13 @@ namespace NIOC.SampleStorage.Shared.Core.Dto.Identity
     public class LoginDto
     {
         /// <summary>
-        /// User SSOToken
+        /// Domain username
         /// </summary>
         public string? UserDomainName { get; set; }
 
         /// <summary>
-        /// Application name in Security system
+        /// SSO header key
         /// </summary>
-        public string? AppName { get; set; }
+        public string? HeaderKey { get; set; }
     }
 }

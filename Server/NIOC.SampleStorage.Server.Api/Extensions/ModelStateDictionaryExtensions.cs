@@ -13,7 +13,7 @@ namespace NIOC.SampleStorage.Server.Api.Extensions
 
             foreach ((string key, ModelState value) in dictionary.Where(HasError))
             {
-                modelErrorWrapper.Errors.Add(new ATAModelError
+                modelErrorWrapper.Errors.Add(new NIOCModelError
                 {
                     Property = key,
                     Messages = ExtractErrorMessages(value.Errors),

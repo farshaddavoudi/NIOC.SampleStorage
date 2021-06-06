@@ -6,12 +6,12 @@ namespace NIOC.SampleStorage.Shared.Core.POCOs
 {
     public class ModelErrorWrapper
     {
-        public List<ATAModelError> Errors { get; set; } = new();
+        public List<NIOCModelError> Errors { get; set; } = new();
     }
 
-    public class ATAModelError
+    public class NIOCModelError
     {
-        public ATAModelError()
+        public NIOCModelError()
         {
             Property = "*";
         }

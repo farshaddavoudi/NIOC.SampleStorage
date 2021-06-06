@@ -2,6 +2,8 @@
 {
     public class UrlOptions
     {
-        public string? AppBaseAddress { get; set; }
+        public string? AppAddress { get; set; }
+
+        public string? SSOAddress { get; set; }
     }
 }
