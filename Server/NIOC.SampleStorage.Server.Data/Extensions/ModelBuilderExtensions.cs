@@ -30,44 +30,13 @@ namespace NIOC.SampleStorage.Server.Data.Extensions
         /// Register database Views in a way that EF do not mistake it will ordinary tables
         /// and map it to real View instead of creating a table
         /// </summary>
-        /// <typeparam name="TView">POCO class mapped to View that implement IEntity</typeparam>
+        /// <typeparam name="TView"> POCO class mapped to View that implement IEntity </typeparam>
         /// <param name="modelBuilder"></param>
         /// <param name="viewName">Name of View in SQL Server database</param>
         public static void ConfigureDbView<TView>(this ModelBuilder modelBuilder, string viewName) where TView : class
         {
             modelBuilder.Entity<TView>().ToView(viewName).HasNoKey();
         }
-
-        #region IsArchived Global Query Filter
-        public static void RegisterIsArchivedGlobalQueryFilter(this ModelBuilder modelBuilder)
-        {
-            foreach (var type in modelBuilder.Model.GetEntityTypes())
-            {
-                if (typeof(IArchivableEntity).IsAssignableFrom(type.ClrType)
-                    && (type.BaseType == null
-                        || !typeof(IArchivableEntity).IsAssignableFrom(type.BaseType.ClrType)))
-                {
-                    modelBuilder.SetIsArchivedFilter(type.ClrType);
-                }
-            }
-        }
-
-        public static void SetIsArchivedFilter(this ModelBuilder modelBuilder, Type entityType)
-        {
-            SetEfGlobalFilterMethod.MakeGenericMethod(entityType)
-                .Invoke(null, new object[] { modelBuilder });
-        }
-
-        private static readonly MethodInfo SetEfGlobalFilterMethod = typeof(ModelBuilderExtensions)
-            .GetMethods(BindingFlags.Public | BindingFlags.Static)
-            .Single(t => t.IsGenericMethod && t.Name == nameof(SetIsArchivedFilter));
-
-        public static void SetIsArchivedFilter<TEntity>(this ModelBuilder modelBuilder)
-            where TEntity : class, IArchivableEntity
-        {
-            modelBuilder.Entity<TEntity>().HasQueryFilter(x => x.IsArchived == false);
-        }
-        #endregion
 
         public static void ConfigureDecimalPrecision(this ModelBuilder modelBuilder)
         {

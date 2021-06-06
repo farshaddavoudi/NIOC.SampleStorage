@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		app_offline.htm = app_offline.htm
 		BitConfig.json = BitConfig.json
 		Directory.build.props = Directory.build.props
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIOC.SampleStorage.Server.Model", "Server\NIOC.SampleStorage.Server.Model\NIOC.SampleStorage.Server.Model.csproj", "{EEAEE891-4D90-4C89-AC90-200B57EEB580}"

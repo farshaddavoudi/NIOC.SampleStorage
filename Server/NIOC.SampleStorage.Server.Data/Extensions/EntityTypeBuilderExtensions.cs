@@ -13,7 +13,7 @@ namespace Microsoft.EntityFrameworkCore.Metadata.Builders
             this EntityTypeBuilder<TEntity> builder,
             Expression<Func<TEntity, object?>> indexExpression
         )
-            where TEntity : class, IArchivableEntity
+            where TEntity : class, IEntity
         {
             return builder
                 .HasIndex(indexExpression)

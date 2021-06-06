@@ -24,8 +24,6 @@ namespace NIOC.SampleStorage.Server.Data
 
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.RegisterIsArchivedGlobalQueryFilter();
-
             modelBuilder.ConfigureDecimalPrecision();
 
             // Restrict Delete (in Hard delete scenarios)
