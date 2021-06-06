@@ -23,4 +23,8 @@
 	<ProjectReference Include="..\NIOC.SampleStorage.Server.Model\NIOC.SampleStorage.Server.Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NIOCWorkflow\" />
+  </ItemGroup>
+
 </Project>
