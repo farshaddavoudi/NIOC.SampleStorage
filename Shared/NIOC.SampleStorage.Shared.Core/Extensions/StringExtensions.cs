@@ -63,7 +63,7 @@ namespace NIOC.SampleStorage.Shared.Core.Extensions
         /// </summary>
         /// <param name="rialDisplayAmount"></param>
         /// <returns></returns>
-        public static long ToLongAmountFromRialDisplay(this string rialDisplayAmount)
+        public static long StringCurrencyFormatToLongAmount(this string rialDisplayAmount)
         {
             return rialDisplayAmount.Replace(",", "").Trim().ToLong();
         }
@@ -73,7 +73,7 @@ namespace NIOC.SampleStorage.Shared.Core.Extensions
         /// </summary>
         /// <param name="rialDisplayAmount"></param>
         /// <returns></returns>
-        public static int ToIntAmountFromRialDisplay(this string rialDisplayAmount)
+        public static int StringCurrencyFormatToIntAmount(this string rialDisplayAmount)
         {
             return rialDisplayAmount.Replace(",", "").Trim().ToInt();
         }
