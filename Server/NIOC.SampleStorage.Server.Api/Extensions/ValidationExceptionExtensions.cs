@@ -1,5 +1,5 @@
-﻿using Bit.Core.Implementations;
-using NIOC.SampleStorage.Shared.Core.Exceptions;
+﻿using NIOC.SampleStorage.Shared.Core.Exceptions;
+using NIOC.SampleStorage.Shared.Core.Extensions;
 using NIOC.SampleStorage.Shared.Core.POCOs;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ namespace NIOC.SampleStorage.Server.Api.Extensions
 {
     public static class ValidationExceptionExtensions
     {
-        public static string GetModelErrorWrapper(this Exception exception)
+        public static string? GetModelErrorWrapper(this Exception exception)
         {
             ModelErrorWrapper? errorWrapper;
 
@@ -35,7 +35,7 @@ namespace NIOC.SampleStorage.Server.Api.Extensions
                 };
             }
 
-            return DefaultJsonContentFormatter.Current.Serialize(errorWrapper);
+            return errorWrapper.SerializeToJson();
         }
     }
 }

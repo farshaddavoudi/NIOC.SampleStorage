@@ -352,3 +352,4 @@ healthchecksdb
 !**/blazor.webassembly.modified.js
 /NIOC.SampleStorage.Web/Properties/launchSettings.json
 /Client/NIOC.SampleStorage.Client.Web.Service/Bit/NIOC.SampleStorage.Model.Context.cs
+/Client/NIOC.SampleStorage.Client.Service/Bit/NIOC.SampleStorage.Model.Context.cs

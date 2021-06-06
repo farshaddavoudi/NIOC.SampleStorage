@@ -13,7 +13,7 @@ namespace NIOC.SampleStorage.Server.Api.Controllers
         {
             get
             {
-                if (HttpContext.User.Identity!.IsAuthenticated == false)
+                if (HttpContext.User.Identity!.IsAuthenticated is false)
                     throw new UnauthorizedException(); // User Is Not Authenticated
 
                 return User.Identity!.GetUserDomainName();

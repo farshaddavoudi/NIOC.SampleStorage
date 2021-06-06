@@ -21,14 +21,14 @@ namespace NIOC.SampleStorage.Server.Api.Extensions
 
         public static string? GetUserDomainName(this IIdentity identity)
         {
-            return identity.FindFirstValue("sub");
+            return identity.FindFirstValue("sub")?.Trim();
         }
 
         public static T? GetUserDomainName<T>(this IIdentity identity) where T : IConvertible
         {
-            var userId = identity.GetUserDomainName();
-            return userId.IsNotNullOrEmpty()
-                ? (T)Convert.ChangeType(userId, typeof(T), CultureInfo.InvariantCulture)!
+            var userDomainName = identity.GetUserDomainName();
+            return userDomainName.IsNotNullOrEmpty()
+                ? (T)Convert.ChangeType(userDomainName, typeof(T), CultureInfo.InvariantCulture)!
                 : default(T);
         }
 
@@ -39,10 +39,10 @@ namespace NIOC.SampleStorage.Server.Api.Extensions
 
         public static Guid? GetSubjectId(this IIdentity identity)
         {
-            var userId = identity.GetUserDomainName();
-            if (userId == null)
+            var userDomainName = identity.GetUserDomainName();
+            if (userDomainName == null)
                 return null;
-            return Guid.Parse(userId);
+            return Guid.Parse(userDomainName);
         }
     }
 }

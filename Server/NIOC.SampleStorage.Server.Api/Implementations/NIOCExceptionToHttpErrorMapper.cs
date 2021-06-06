@@ -24,14 +24,14 @@ namespace NIOC.SampleStorage.Server.Api.Implementations
         {
             exp = UnWrapException(exp);
 
-            string messageToShow = BitMetadataBuilder.UnknownError;
+            string? messageToShow = BitMetadataBuilder.UnknownError;
 
             if (IsKnownError(exp))
             {
                 messageToShow = exp.GetModelErrorWrapper();
             }
 
-            return messageToShow;
+            return messageToShow ?? "";
         }
     }
 }
