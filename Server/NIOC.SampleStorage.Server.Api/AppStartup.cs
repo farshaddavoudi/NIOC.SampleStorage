@@ -32,7 +32,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Reflection;
 
-[assembly: ODataModule("ATAAdminPanel")]
+[assembly: ODataModule("SampleStorage")]
 
 namespace NIOC.SampleStorage.Server.Api
 {
@@ -79,7 +79,7 @@ namespace NIOC.SampleStorage.Server.Api
 
             dependencyManager
                 .RegisterWebApiConfigurationCustomizer<GlobalDefaultExceptionHandlerActionFilterProvider<
-                    ATAExceptionHandlerFilterAttribute>>();
+                    NIOCExceptionHandlerFilterAttribute>>();
 
             dependencyManager.RegisterModelStateValidator();
 
@@ -104,7 +104,7 @@ namespace NIOC.SampleStorage.Server.Api
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = AppMetadata.ApplicationPersianFullName, Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = AppMetadata.AppPersianFullName, Version = "v1" });
             });
 
 
@@ -143,7 +143,7 @@ namespace NIOC.SampleStorage.Server.Api
                 aspNetCoreApp.UseRouting();
 
                 aspNetCoreApp.UseSwagger();
-                aspNetCoreApp.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{AppMetadata.ApplicationEnglishFullName} v1"));
+                aspNetCoreApp.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{AppMetadata.AppEnglishFullName} v1"));
             });
 
             dependencyManager.RegisterAspNetCoreSingleSignOnClient();

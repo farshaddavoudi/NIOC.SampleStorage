@@ -33,7 +33,5 @@ namespace NIOC.SampleStorage.Server.Data
             // Auto Register all Entity Configurations (Fluent-API)
             modelBuilder.ApplyConfigurations(typeof(NIOCDbContext).Assembly);
         }
-
-
     }
 }

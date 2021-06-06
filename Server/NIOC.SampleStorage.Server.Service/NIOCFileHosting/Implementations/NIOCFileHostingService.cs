@@ -27,12 +27,12 @@ namespace NIOC.SampleStorage.Server.Service.NIOCFileHosting.Implementations
 
         public string GetBaseUrl()
         {
-            return $"https://cdn.nioc.ir/portal/{AppMetadata.ApplicationKeyName}";
+            return $"https://cdn.nioc.ir/portal/{AppMetadata.AppIdentityName}";
         }
 
         public string GetDownloadUrl(string filePath)
         {
-            return $"{CDNBasePath}/{AppMetadata.ApplicationKeyName}/{filePath}";
+            return $"{CDNBasePath}/{AppMetadata.AppIdentityName}/{filePath}";
         }
 
         public async Task<string> UploadFileAsync(UsingIFormFileArgs args, CancellationToken cancellationToken)
@@ -71,7 +71,7 @@ namespace NIOC.SampleStorage.Server.Service.NIOCFileHosting.Implementations
 
             if (basePath == null) throw new DomainLogicException("هیچ مسیر پایه‌ای برای ذخیره فایل مشخص نشده است");
 
-            basePath = Path.Combine(basePath, AppMetadata.ApplicationKeyName);
+            basePath = Path.Combine(basePath, AppMetadata.AppIdentityName);
 
             CreateDirectoryIfNotExists(basePath);
 

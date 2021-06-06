@@ -8,7 +8,7 @@ namespace NIOC.SampleStorage.Shared.App
         public static readonly string SSOTokenKey = "SSOToken";
         public static readonly string AuthTokenProps = "primary_sid";
         public static readonly string IdentityTokenId = nameof(IdentityTokenId);
-        public static readonly string AppCDNBaseURL = "https://cdn.app.ataair.ir/portal/assets"; //Address for assets files like styles, images, etc
+        public static readonly string StaticFilesCDNAddress = "https://cdn.app.nioc.ir/portal/assets"; //Address for assets files like styles, images, etc
 
         /// <summary>
         /// Seq log server

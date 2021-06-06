@@ -15,53 +15,52 @@ namespace NIOC.SampleStorage.Server.Service
     {
         #region Property Injections
 
-        public IReadOnlyNIOCRepository<TEntity> ReadOnlyATARepository { get; set; } = default!;
+        public IReadOnlyNIOCRepository<TEntity> ReadOnlyNIOCRepository { get; set; } = default!;
 
         public IMapper Mapper { get; set; } = default!;
 
 
         #endregion Property Injections
 
-
         public Expression<Func<TEntity, bool>>? CommonWhere { get; set; }
         public Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? CommonOrder { get; set; }
 
         public virtual async Task<TEntity?> GetByIdAsync(int key, CancellationToken cancellationToken)
         {
-            TEntity? entity = await ReadOnlyATARepository.GetByIdAsync(cancellationToken, key);
+            TEntity? entity = await ReadOnlyNIOCRepository.GetByIdAsync(cancellationToken, key);
 
             return entity;
         }
 
         public virtual IQueryable<TEntity> GetAll()
         {
-            IQueryable<TEntity> entities = ReadOnlyATARepository.GetAll();
+            IQueryable<TEntity> entities = ReadOnlyNIOCRepository.GetAll();
 
             return entities;
         }
 
         private IQueryable<TEntity> GetSorted(IQueryable<TEntity> query, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy)
         {
-            return orderBy != null ? orderBy(query) : (CommonOrder != null ? CommonOrder(query) : query);
+            return orderBy != null ? orderBy(query) : CommonOrder != null ? CommonOrder(query) : query;
         }
 
         public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>>? where = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null)
         {
-            IQueryable<TEntity> query = ReadOnlyATARepository.GetAll().AddWhere(CommonWhere).AddWhere(where);
+            IQueryable<TEntity> query = ReadOnlyNIOCRepository.GetAll().AddWhere(CommonWhere).AddWhere(where);
 
             return GetSorted(query, orderBy).AsEnumerable();
         }
 
         public async Task<IEnumerable<TEntity>> GetAsync(CancellationToken cancellationToken, Expression<Func<TEntity, bool>>? where = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null, string includeProperties = "")
         {
-            IQueryable<TEntity> query = (await ReadOnlyATARepository.GetAllAsync(cancellationToken)).AddWhere(CommonWhere).AddWhere(where);
+            IQueryable<TEntity> query = (await ReadOnlyNIOCRepository.GetAllAsync(cancellationToken)).AddWhere(CommonWhere).AddWhere(where);
 
             return GetSorted(query, orderBy).AsEnumerable();
         }
 
         public async Task<IQueryable<TEntity>> GetAsync(CancellationToken cancellationToken)
         {
-            IQueryable<TEntity> query = await ReadOnlyATARepository.GetAllAsync(cancellationToken);
+            IQueryable<TEntity> query = await ReadOnlyNIOCRepository.GetAllAsync(cancellationToken);
 
             return query;
         }

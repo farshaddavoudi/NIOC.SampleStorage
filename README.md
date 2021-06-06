@@ -5,7 +5,6 @@ Sample Stroage project conducted by NIOC IT department. This project developed u
 
 - Also the Bit framework has been used both in Backend and Frontend for easy and fast development of the project.
 
-
 # Server
 All Nuget packages created by this project:
 

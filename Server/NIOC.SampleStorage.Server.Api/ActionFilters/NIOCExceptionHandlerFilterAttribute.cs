@@ -7,7 +7,7 @@ using System.Web.Http.Filters;
 
 namespace NIOC.SampleStorage.Server.Api.ActionFilters
 {
-    public class ATAExceptionHandlerFilterAttribute : ExceptionHandlerFilterAttribute
+    public class NIOCExceptionHandlerFilterAttribute : ExceptionHandlerFilterAttribute
     {
         protected override HttpResponseMessage CreateErrorResponseMessage(HttpActionExecutedContext actionExecutedContext, IExceptionToHttpErrorMapper exceptionToHttpErrorMapper, Exception exception)
         {

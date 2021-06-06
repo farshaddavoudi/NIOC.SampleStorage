@@ -16,6 +16,7 @@ namespace NIOC.SampleStorage.Server.Api.ActionFilters
 {
     public class NIOCAuthorizeAttribute : AuthorizeAttribute, IAuthorizationFilter
     {
+        // TODO: Manage roles based on application
         public new string[] Roles { get; set; } = Array.Empty<string>();
 
         // AspNetCore Controllers

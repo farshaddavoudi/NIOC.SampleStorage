@@ -20,7 +20,7 @@ namespace NIOC.SampleStorage.Server.Service.Identity
                 .FirstOrDefaultAsync(token => token.Id == id, cancellationToken);
         }
 
-        public async Task DeleteByUserIdAsync(string userDomainName, CancellationToken cancellationToken)
+        public async Task DeleteByUserDomainNameAsync(string userDomainName, CancellationToken cancellationToken)
         {
             await DeleteTokensWhere(token => token.UserDomainName == userDomainName, cancellationToken);
         }

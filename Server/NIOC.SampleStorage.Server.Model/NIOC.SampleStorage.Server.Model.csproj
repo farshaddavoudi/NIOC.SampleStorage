@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Clients\" />
     <Folder Include="Entities\Workflow\" />
   </ItemGroup>
 
