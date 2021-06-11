@@ -44,10 +44,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIOC.SampleStorage.Shared.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NIOC.SampleStorage.Shared.App", "Shared\NIOC.SampleStorage.Shared.App\NIOC.SampleStorage.Shared.App.csproj", "{454E546D-2D6A-461C-B13F-9FD84F1E7AB3}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Important files", "Important files\Important files.shproj", "{821E6EB8-3E7B-4DEC-967F-EB77D61DDB94}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Documents\Develop phases\Develop phases.projitems*{144ebb9d-1f86-495e-81a9-965ba44c9cc7}*SharedItemsImports = 13
 		Documents\Official docs\Official docs.projitems*{635393b6-36f7-4134-a1b0-693443136481}*SharedItemsImports = 13
+		Important files\Important files.projitems*{821e6eb8-3e7b-4dec-967f-eb77d61ddb94}*SharedItemsImports = 13
 		Documents\Business analysis\Business analysis.projitems*{915bcbaa-f396-4456-bce6-b4874e253858}*SharedItemsImports = 13
 		Documents\SSO Auth\SSO Auth.projitems*{b32b81fa-bdd2-4b91-b746-38490e51ada5}*SharedItemsImports = 13
 	EndGlobalSection
@@ -105,6 +108,7 @@ Global
 		{915BCBAA-F396-4456-BCE6-B4874E253858} = {DB893EE1-DBDF-4734-8721-20E839DD6260}
 		{81EE8115-2412-41A6-815C-C71B1674AE9B} = {622B197D-3641-42D9-8B57-34EC5BE67869}
 		{454E546D-2D6A-461C-B13F-9FD84F1E7AB3} = {622B197D-3641-42D9-8B57-34EC5BE67869}
+		{821E6EB8-3E7B-4DEC-967F-EB77D61DDB94} = {DB893EE1-DBDF-4734-8721-20E839DD6260}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {152DA8F3-053A-418F-B995-D6FB6A82748A}

@@ -3,10 +3,19 @@
 @inherits BitPageBase
 @inject IJSRuntime JsRuntime
 
-<Title Value="@(AppMetadata.AppEnglishFullName)" />
+<Title Value="@(AppMetadata.EnglishFullName)" />
 
-<div>
-    <span>
-        Some pages here.
-    </span>
+<div class="row" style="background-color: aqua">
+    <div class="col-5" style="border: 3px solid blue"></div>
+    <div class="col-3" style="border: 3px solid red">
+        <span>
+            Some pages here.
+        </span>
+    </div>
+    <div class="col-4" style="border: 3px solid brown">
+        <div class="row">
+            <div class="col-6" style="border: 3px solid yellow"></div>
+            <div class="col-6"></div>
+        </div>
+    </div>
 </div>

@@ -83,7 +83,7 @@ namespace NIOC.SampleStorage.Client.Web.Implementations
                 }
 
                 // 2. Get/Set JwtToken by calling SecurityService.LoginWithCredentials method
-                token = await _securityService.LoginWithCredentials(ssoToken!, AppMetadata.AppEnglishFullName, AppConstants.WebApp.ClientId, AppConstants.WebApp.Secret);
+                token = await _securityService.LoginWithCredentials(ssoToken!, AppMetadata.EnglishFullName, AppConstants.WebApp.ClientId, AppConstants.WebApp.Secret);
 
                 // 3. Change back RefreshBitToken localstorage to false
                 await _localStorageService.SetItemAsync(nameof(RefreshBitToken), false);
@@ -123,7 +123,7 @@ namespace NIOC.SampleStorage.Client.Web.Implementations
                     //    await NavigateToSSOLoginPage();
 
                     // SSOToken is valid at this point
-                    token = await _securityService.LoginWithCredentials(ssoToken!, AppMetadata.AppEnglishFullName, AppConstants.WebApp.ClientId, AppConstants.WebApp.Secret);
+                    token = await _securityService.LoginWithCredentials(ssoToken!, AppMetadata.EnglishFullName, AppConstants.WebApp.ClientId, AppConstants.WebApp.Secret);
                 }
 
                 // Set RefreshBitToken localstorage to false (to be ready for change)

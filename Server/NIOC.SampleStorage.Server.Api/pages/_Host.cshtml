@@ -14,8 +14,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>@(AppMetadata.AppEnglishFullName)</title>
+    <title>@(AppMetadata.EnglishFullName)</title>
     <base href="~/" />
+    <link href="styles/bootstrap-grid.min.css" rel="stylesheet" asp-append-version="true" />
     <link rel="stylesheet" href="_content/Telerik.UI.for.Blazor/css/kendo-theme-default/all.css" asp-append-version="true" />
     <link rel="stylesheet" href="_content/Radzen.Blazor/css/default-base.css" asp-append-version="true">
     <link href="_content/Blazored.Toast/blazored-toast.min.css" rel="stylesheet" asp-append-version="true" />
@@ -24,7 +25,7 @@
     <link href="styles/app.css" rel="stylesheet" asp-append-version="true" />
     <link href="NIOC.SampleStorage.Client.Web.styles.css" rel="stylesheet" asp-append-version="true" />
 </head>
-<body>
+<body class="container-fluid">
     @*<component type="typeof(App)" render-mode="WebAssembly" />*@
 
     <app>

@@ -1,1 +1,148 @@
-﻿
+﻿$SidebarBackgroundColor: #1f2936;
+
+/*#region font-face*/
+
+@font-face {
+    font-family: 'aeonik-bold';
+    src: url("../../fonts/Aeonik-Bold.otf?v=uc2a313ce") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'aeonik-medium';
+    src: url("../../fonts/Aeonik-Medium.otf?v=uc2a313ce") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'aeonik-regular';
+    src: url("../../fonts/Aeonik-regular.otf?v=uc2a313ce") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'aeonik-light';
+    src: url("../../fonts/Aeonik-Light.otf?v=uc2a313ce") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+/*#endregion*/
+
+html, body {
+    font-family: 'aeonik-regular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    width: inherit !important;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page {
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        color: #f4f6fa;
+        background-color: $SidebarBackgroundColor;
+        transition: .3s transform;
+        overflow-x: auto;
+        min-height: 100vh;
+
+        .logo-wrapper {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+
+            .logo-image {
+                height: 48px;
+                margin-right: 10px;
+            }
+
+            .logo-brand {
+                font-size: 1.55em;
+                font-family: 'aeonik-bold';
+                text-align: center;
+                margin-top: 5px;
+                color: #fff;
+            }
+        }
+
+        .links-wrapper {
+            margin-top: 40px;
+            padding-left: 22px;
+            font-weight: 400;
+            font-size: 20px;
+
+            .nav-link {
+                color: white;
+                opacity: 0.7;
+                display: flex;
+                margin: 25px 0;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                .nav-link-icon {
+                    font-size: 17px;
+                    margin-right: 12px;
+                }
+            }
+
+            .nav-links-group {
+                .rz-navigation-item {
+                    width: 100%;
+
+                    .rz-navigation-item-wrapper {
+                        background-color: $SidebarBackgroundColor;
+                        padding: 0;
+
+                        .rz-navigation-item-link {
+                            color: white;
+                            opacity: 0.7;
+                            margin-right: 10px;
+
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                    .rz-navigation-menu {
+                        background-color: $SidebarBackgroundColor;
+
+                        .rz-navigation-item {
+                            margin: 15px 10px;
+
+                            .rz-navigation-item-link {
+                                &:hover {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .main {
+        width: 80%;
+    }
+}

@@ -6,7 +6,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Bit.Universal.Data" Version="7.3.0" />
-		<PackageReference Include="EFCore.BulkExtensions" Version="5.2.2" />
+		<PackageReference Include="EFCore.BulkExtensions" Version="5.2.3" />
 	</ItemGroup>
 
   <ItemGroup>

@@ -1,3 +1,45 @@
-﻿<div>
-    <span> Nav Menu</span>
+﻿<div class="logo-wrapper">
+    <img src="/images/pages/main/nioc-logo.png" class="logo-image" />
+    <div class="logo-brand">Sample Storage</div>
+</div>
+
+<div class="links-wrapper">
+    <NavLink class="nav-link" href="/" title="Home">
+        <div class="nav-link-icon"> <RadzenIcon Icon="home" /> </div>
+        <div> Home </div>
+    </NavLink>
+
+    <NavLink class="nav-link" href="/" title="Samples">
+        <div class="nav-link-icon"> <RadzenIcon Icon="view_in_ar" /> </div>
+        <div> All Samples </div>
+    </NavLink>
+
+    <NavLink class="nav-link" href="/" title="Request">
+        <div class="nav-link-icon"> <RadzenIcon Icon="add_task" /> </div>
+        <div> Sample Request </div>
+    </NavLink>
+
+    <NavLink class="nav-link" href="/" title="Permissions">
+        <div class="nav-link-icon"> <RadzenIcon Icon="verified_user" /> </div>
+        <div> Manage Permissions </div>
+    </NavLink>
+
+    <NavLink class="nav-link" href="/" title="Workflows">
+        <div class="nav-link-icon"> <RadzenIcon Icon="mediation" /> </div>
+        <div> See Workflows </div>
+    </NavLink>
+
+    <NavLink class="nav-link" href="/" title="Reports">
+        <div class="nav-link-icon"> <RadzenIcon Icon="show_chart" /> </div>
+        <div> All Reports </div>
+    </NavLink>
+
+    <div class="nav-links-group">
+        <RadzenMenu>
+            <RadzenMenuItem Text="System Logs" Icon="content_copy">
+                <RadzenMenuItem Text="Audit Logs" Path="/" Icon="track_changes" />
+                <RadzenMenuItem Text="Error Logs" Path="/" Icon="bug_report" />
+            </RadzenMenuItem>
+        </RadzenMenu>
+    </div>
 </div>
