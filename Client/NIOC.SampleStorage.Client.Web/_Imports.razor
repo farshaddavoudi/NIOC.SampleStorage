@@ -1,10 +1,31 @@
 ﻿@using System.Net.Http
-@using System.Net.Http.Json
 @using Microsoft.AspNetCore.Components.Forms
 @using Microsoft.AspNetCore.Components.Routing
 @using Microsoft.AspNetCore.Components.Web
-@using Microsoft.AspNetCore.Components.Web.Virtualization
-@using Microsoft.AspNetCore.Components.WebAssembly.Http
 @using Microsoft.JSInterop
+@using System.Net.Http.Json
+@using Microsoft.AspNetCore.Components.Web.Extensions.Head
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Authorization
+
+@* Libs Usings *@
+@using Bit_.View
+@using Blazored.Toast
+@using Blazored.Toast.Services
+@using Blazored.Modal
+@using Blazored.Modal.Services
+@using Telerik.Blazor
+@using Telerik.Blazor.Components
+@using Radzen
+@using Radzen.Blazor
+@using Blazor.PersianDatePicker
+
+@* Project Usings *@
 @using NIOC.SampleStorage.Client.Web
+@using NIOC.SampleStorage.Client.Web.Components
 @using NIOC.SampleStorage.Client.Web.Shared
+@using NIOC.SampleStorage.Shared.App
+@using NIOC.SampleStorage.Client.Service
+@using NIOC.SampleStorage.Shared.Core.Dto
+@using NIOC.SampleStorage.Client.Service.AppSettingsOptions
+@using NIOC.SampleStorage.Client.Web.Extensions

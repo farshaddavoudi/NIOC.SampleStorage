@@ -1,10 +1,41 @@
-<Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
-    </Found>
-    <NotFound>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <p>Sorry, there's nothing at this address.</p>
-        </LayoutView>
-    </NotFound>
-</Router>
+@using Microsoft.AspNetCore.Components.WebAssembly.Services
+@inject IJSRuntime JsRuntime
+@inject LazyAssemblyLoader AssemblyLoader
+
+<CascadingBlazoredModal>
+    <CascadingAuthenticationState>
+        <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true">
+            <Navigating>
+                <Loading />
+            </Navigating>
+            <Found Context="routeData">
+                <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+
+                    <NotAuthorized>
+                        <Loading />
+                    </NotAuthorized>
+
+                    <Authorizing>
+                        <Loading />
+                    </Authorizing>
+
+                </AuthorizeRouteView>
+            </Found>
+
+            <NotFound>
+                <LayoutView Layout="@typeof(MainLayout)">
+                    <PageNotFound />
+                </LayoutView>
+            </NotFound>
+
+        </Router>
+    </CascadingAuthenticationState>
+</CascadingBlazoredModal>
+
+@code
+{
+    protected override async Task OnInitializedAsync()
+    {
+        //await JsRuntime.InvokeVoidAsync("addSignature");
+    }
+}

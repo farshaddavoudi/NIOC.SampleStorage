@@ -10,24 +10,17 @@
 }
 
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>@(AppMetadata.AppPersianFullName)</title>
+    <title>@(AppMetadata.AppEnglishFullName)</title>
     <base href="~/" />
-    <link href="@($"{AppConstants.StaticFilesCDNAddress}/css/bootstrap/bootstrap.rtl.min.css")" rel="stylesheet" asp-append-version="true" />
-    <link href="https://cdn.app.ataair.ir/fonts/FontAwesome.Pro.5.13.0.Web/css/all.min.css" rel="stylesheet" asp-append-version="true">
     <link rel="stylesheet" href="_content/Telerik.UI.for.Blazor/css/kendo-theme-default/all.css" asp-append-version="true" />
     <link rel="stylesheet" href="_content/Radzen.Blazor/css/default-base.css" asp-append-version="true">
     <link href="_content/Blazored.Toast/blazored-toast.min.css" rel="stylesheet" asp-append-version="true" />
     <link href="_content/Blazored.Modal/blazored-modal.css" rel="stylesheet" asp-append-version="true" />
-    <link href="@($"{AppConstants.StaticFilesCDNAddress}/css/ata-layout/sidebar-nav.min.css")" rel="stylesheet" asp-append-version="true" />
-    <link href="@($"{AppConstants.StaticFilesCDNAddress}/css/ata.css")" rel="stylesheet" asp-append-version="true" />
-    <link href="@($"{AppConstants.StaticFilesCDNAddress}/css/ata-layout/custom.css")" rel="stylesheet" asp-append-version="true" />
-    <link href="@($"{AppConstants.StaticFilesCDNAddress}/css/ata-layout/inside.css")" rel="stylesheet" asp-append-version="true" />
     <link href="_content/Blazor.PersianDatePicker/datepicker.css" rel="stylesheet" asp-append-version="true" />
-    <link href="styles/Cdn/feri-custom.css" rel="stylesheet" asp-append-version="true" />
     <link href="styles/app.css" rel="stylesheet" asp-append-version="true" />
     <link href="NIOC.SampleStorage.Client.Web.styles.css" rel="stylesheet" asp-append-version="true" />
 </head>
@@ -98,21 +91,19 @@
         </script>
     </app>
 
-    <div id="blazor-error-ui">
+    <div id="blazor-error-ui" style="display: none">
         متاسفانه خطایی روی داده است. لطفا صفحه را مجدد بارگزاری نمایید. در صورت عدم رفع مشکل با پشتیبانی تماس بگیرید
         <a href="" class="reload btn btn-sm">بارگزاری مجدد صفحه</a>
         <a class="dismiss">🗙</a>
     </div>
 
     @*<script src="_framework/blazor.webassembly.js" asp-append-version="true"></script>*@
-    <script src="scripts/blazor.webassembly.modified.js" asp-append-version="true"></script>
+    <script src="scripts/blazor.webassembly.hasloading.js" asp-append-version="true"></script>
     <script src="_content/Blazor.PersianDatePicker/datepicker.min.js" asp-append-version="true"></script>
     <script src="_content/Telerik.UI.for.Blazor/js/telerik-blazor.js" asp-append-version="true"></script>
     <script src="_content/Radzen.Blazor/Radzen.Blazor.js" asp-append-version="true"></script>
-    <script src="_content/Microsoft.AspNetCore.Components.Web.Extensions/headManager.js" asp-append-version="true"></script>
+    @*<script src="_content/Microsoft.AspNetCore.Components.Web.Extensions/headManager.js" asp-append-version="true"></script>*@
     <script src="_content/Blazored.Modal/blazored.modal.js" asp-append-version="true"></script>
-    <script src="scripts/blazor.extensions.js" asp-append-version="true"></script>
-    <script src="@($"{AppConstants.StaticFilesCDNAddress}/js/ata.js")" asp-append-version="true"></script>
-    <script src="scripts/app.js" asp-append-version="true"></script>
+    @*<script src="scripts/blazor.extensions.js" asp-append-version="true"></script>*@
 </body>
 </html>

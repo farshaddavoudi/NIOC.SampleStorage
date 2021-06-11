@@ -56,6 +56,8 @@ namespace NIOC.SampleStorage.Client.Web.Implementations
 
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
         {
+            return new AuthenticationState(new ClaimsPrincipal(new ClaimsPrincipal()));
+
             Token token;
 
             bool refreshBitToken;

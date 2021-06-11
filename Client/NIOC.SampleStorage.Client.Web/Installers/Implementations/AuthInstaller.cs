@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.Extensions.DependencyInjection;
 using NIOC.SampleStorage.Client.Service.AppSettingsOptions;
+using NIOC.SampleStorage.Client.Web.Implementations;
 using NIOC.SampleStorage.Client.Web.Installers.Contract;
 
 namespace NIOC.SampleStorage.Client.Web.Installers.Implementations
@@ -12,9 +14,9 @@ namespace NIOC.SampleStorage.Client.Web.Installers.Implementations
 
             services.AddAuthorizationCore();
 
-            //services.AddScoped<AuthenticationStateProvider, AppAuthenticationStateProvider>();
+            services.AddScoped<AuthenticationStateProvider, AppAuthenticationStateProvider>();
 
-            //services.AddTransient(serviceProvider => (AppAuthenticationStateProvider)serviceProvider.GetRequiredService<AuthenticationStateProvider>());
+            services.AddTransient(serviceProvider => (AppAuthenticationStateProvider)serviceProvider.GetRequiredService<AuthenticationStateProvider>());
         }
     }
 }

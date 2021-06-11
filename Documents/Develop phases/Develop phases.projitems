@@ -9,11 +9,15 @@
     <Import_RootNamespace>Develop_phases</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)5. Configure git and upload project there" />
-    <None Include="$(MSBuildThisFileDirectory)6. Design workflow, business tables, etc" />
-    <None Include="$(MSBuildThisFileDirectory)4. Implement accessibility feature" />
-    <None Include="$(MSBuildThisFileDirectory)3. Make base func works including Swagger and UI" />
-    <None Include="$(MSBuildThisFileDirectory)2. Add base helpers and methods" />
-    <None Include="$(MSBuildThisFileDirectory)1. Create project structure" />
+    <None Include="$(MSBuildThisFileDirectory)4.2.1– Apply designs in Blazor completely without backend" />
+    <None Include="$(MSBuildThisFileDirectory)4.2.2– Design Permissions, Login, Request and get-process forms" />
+    <None Include="$(MSBuildThisFileDirectory)4.1– Design pages on paper" />
+    <None Include="$(MSBuildThisFileDirectory)5– Configure git and upload project there" />
+    <None Include="$(MSBuildThisFileDirectory)8– Continue" />
+    <None Include="$(MSBuildThisFileDirectory)7– Design workflow, business tables, etc" />
+    <None Include="$(MSBuildThisFileDirectory)6– Implement accessibility feature" />
+    <None Include="$(MSBuildThisFileDirectory)3– Make base func works including Swagger and UI" />
+    <None Include="$(MSBuildThisFileDirectory)2– Add base helpers and methods" />
+    <None Include="$(MSBuildThisFileDirectory)1– Create project structure" />
   </ItemGroup>
 </Project>
