@@ -24,10 +24,15 @@
         <div> Sample Request </div>
     </NavLink>
 
-    <NavLink class="nav-link" href="/" title="Permissions">
-        <div class="nav-link-icon"> <RadzenIcon Icon="verified_user" /> </div>
-        <div> Manage Permissions </div>
-    </NavLink>
+    <div class="nav-links-group">
+        <RadzenMenu>
+            <RadzenMenuItem Text="Manage Permissions" Icon="verified_user">
+                <RadzenMenuItem Text="Manage Roles" Path="/" Icon="outlined_flag" />
+                <RadzenMenuItem Text="User Roles" Path="/" Icon="how_to_reg" />
+                <RadzenMenuItem Text="Role Claims" Path="/" Icon="change_history" />
+            </RadzenMenuItem>
+        </RadzenMenu>
+    </div>
 
     <NavLink class="nav-link" href="/" title="Workflows">
         <div class="nav-link-icon"> <RadzenIcon Icon="mediation" /> </div>

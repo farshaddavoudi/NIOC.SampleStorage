@@ -88,7 +88,7 @@ a {
         height: 100vh;
 
         &:hover {
-            overflow-y: scroll;
+            overflow-y: hidden;
         }
 
         .logo-wrapper {
@@ -152,13 +152,22 @@ a {
                                 opacity: 1;
                             }
                         }
+
+                        .rzi.rz-navigation-item-icon-children {
+                            margin-bottom: -5px;
+                        }
                     }
 
                     .rz-navigation-menu {
                         background-color: $SidebarBackgroundColor;
+                        position: relative;
+                        box-shadow: none;
+                        border: none;
+                        border-radius: 0;
+                        margin-bottom: -2px;
 
                         .rz-navigation-item {
-                            margin: 15px 10px;
+                            margin: 15px;
 
                             .rz-navigation-item-link {
                                 &:hover {
