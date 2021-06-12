@@ -61,7 +61,8 @@ a {
         background-color: $SidebarBackgroundColor;
         transition: .3s transform;
         overflow-x: auto;
-        min-height: 100vh;
+        overflow-y: scroll;
+        height: 100vh;
 
         .logo-wrapper {
             text-align: center;
@@ -71,11 +72,11 @@ a {
 
             .logo-image {
                 height: 48px;
-                margin-right: 10px;
+                margin-right: 2px;
             }
 
             .logo-brand {
-                font-size: 1.55em;
+                font-size: 2rem;
                 font-family: 'aeonik-bold';
                 text-align: center;
                 margin-top: 5px;
@@ -85,7 +86,7 @@ a {
 
         .links-wrapper {
             margin-top: 40px;
-            padding-left: 22px;
+            padding-left: 15px;
             font-weight: 400;
             font-size: 20px;
 
@@ -102,6 +103,8 @@ a {
                 .nav-link-icon {
                     font-size: 17px;
                     margin-right: 12px;
+                    display: flex;
+                    align-items: center;
                 }
             }
 
