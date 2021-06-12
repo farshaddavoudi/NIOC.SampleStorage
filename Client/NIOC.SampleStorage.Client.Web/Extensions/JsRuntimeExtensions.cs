@@ -25,24 +25,24 @@ namespace NIOC.SampleStorage.Client.Web.Extensions
             return await jsRuntime.InvokeAsync<string>("deleteCookie", cookieName);
         }
 
-        public static async Task NavigateToUrlInNewTab(this IJSRuntime jsRuntime, string url)
+        public static async Task OpenInNewTabAsync(this IJSRuntime jsRuntime, string url)
         {
             await jsRuntime.InvokeVoidAsync("open", url, "_blank");
         }
 
-        public static async Task ChangeAddressBarUrl(this IJSRuntime jsRuntime, string newUrl)
+        public static async Task ChangeAddressBarUrlAsync(this IJSRuntime jsRuntime, string newUrl)
         {
             await jsRuntime.InvokeVoidAsync("changeAddressBarUrl", newUrl);
         }
 
-        public static async Task AddClassToElementById(this IJSRuntime jsRuntime, string elementId, string className)
+        public static async Task AddCSSClassByElementIdAsync(this IJSRuntime jsRuntime, string elementId, string className)
         {
             await jsRuntime.InvokeVoidAsync("addClassToElementById", elementId, className);
         }
 
-        public static async Task SetLayoutTitle(this IJSRuntime jsRuntime, string title)
+        public static async Task SetFocusAsync(this IJSRuntime jsRuntime, string elementId)
         {
-            await jsRuntime.InvokeVoidAsync("setLayoutTitle", title);
+            await jsRuntime.InvokeVoidAsync("setFocus", elementId);
         }
 
     }

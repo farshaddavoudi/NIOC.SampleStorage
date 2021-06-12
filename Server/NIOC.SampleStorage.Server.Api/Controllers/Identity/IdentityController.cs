@@ -21,7 +21,7 @@ namespace NIOC.SampleStorage.Server.Api.Controllers.Identity
         {
             var appClient = new HttpClient { BaseAddress = new Uri(ServerAppSettings.UrlOptions!.AppAddress!) };
 
-            var reqContent = $"scope=openid+profile+user_info&grant_type=password&username={loginArg.UserDomainName}&password={loginArg.HeaderKey}&client_id={AppConstants.WebApp.ClientId}&client_secret=secret";
+            var reqContent = $"scope=openid+profile+user_info&grant_type=password&username={loginArg.Username}&password={loginArg.Password}&client_id={AppConstants.WebApp.ClientId}&client_secret=secret";
 
             var buffer = System.Text.Encoding.UTF8.GetBytes(reqContent);
 

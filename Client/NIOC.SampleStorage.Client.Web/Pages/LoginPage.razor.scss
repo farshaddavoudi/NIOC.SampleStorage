@@ -1,0 +1,109 @@
+﻿.page-container {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login-container {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 20px;
+        border: none;
+        position: relative;
+        background-clip: border-box;
+        border: 1px solid rgba(101,109,119,.16);
+        border-radius: 4px;
+
+        .avatar {
+            position: absolute;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            top: -50px;
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            z-index: 9;
+            background: #60c7c1;
+            padding: 15px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .login-header {
+            width: 100%;
+            margin-top: 60px;
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            padding: 0 20px;
+        }
+
+        .login-button {
+            cursor: pointer;
+            color: #fff;
+            border-radius: 4px;
+            background: #60c7c1 !important;
+            text-decoration: none;
+            transition: all 0.4s;
+            line-height: normal;
+            border: none;
+            min-height: 40px;
+            display: block;
+            width: 100%;
+            padding: .5rem 1rem;
+            font-size: 1.25rem;
+            font-weight: 400;
+            text-align: center;
+            vertical-align: middle;
+            -webkit-appearance: button;
+            text-transform: none;
+            margin-bottom: 35px;
+
+            &:hover {
+                background: #45aba6 !important;
+                outline: none;
+            }
+        }
+
+        .login-footer {
+            margin-top: 15px;
+            background: #ecf0f1;
+            border-color: #dee4e7;
+            text-align: center;
+            justify-content: center;
+            margin: 0 -20px -20px;
+            border-radius: 2px;
+            font-size: 13px;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: end;
+            justify-content: center;
+            padding: .75rem;
+            border-top: 1px solid #dee2e6;
+
+            a {
+                color: #999;
+                text-decoration: none;
+                margin: .25rem;
+                font-size: 13px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

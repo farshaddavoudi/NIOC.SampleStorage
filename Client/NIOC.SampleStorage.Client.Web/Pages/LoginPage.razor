@@ -1,0 +1,46 @@
+﻿@page "/login"
+@using NIOC.SampleStorage.Shared.Core.Dto.Identity
+
+<div class="top-bar">
+    <div class="page-title-wrapper">
+        <div class="page-name"> Login </div>
+        <div class="nioc-system">NIOC SYSTEMS</div>
+    </div>
+    <div>
+        Ali Nasri
+    </div>
+</div>
+
+<div class="page-container">
+    <div class="login-container">
+        <div class="avatar">
+            <img src="/images/pages/login/avatar.png" alt="Avatar" />
+        </div>
+
+        <div class="login-header">
+            Member Login
+        </div>
+
+        <EditForm Model="@Login" OnValidSubmit="LoginMe">
+            <div class="form-group">
+                <InputText id="usernameInput" class="form-control" @bind-Value="@Login.Username" placeholder="Username" />
+            </div>
+
+            <div class="form-group">
+                <InputText class="form-control" type="password" @bind-Value="@Login.Password" placeholder="Password" />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="login-button">Login</button>
+            </div>
+        </EditForm>
+
+        <div class="login-footer">
+            <a href="#">Forgot Password?</a>
+        </div>
+    </div>
+</div>
+
+@code {
+
+}

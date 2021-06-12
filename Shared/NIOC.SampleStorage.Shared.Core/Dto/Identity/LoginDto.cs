@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NIOC.SampleStorage.Shared.Core.Dto.Identity
 {
@@ -8,11 +9,13 @@ namespace NIOC.SampleStorage.Shared.Core.Dto.Identity
         /// <summary>
         /// Domain username
         /// </summary>
-        public string? UserDomainName { get; set; }
+        [Required(ErrorMessage = "Username is required")]
+        public string? Username { get; set; }
 
         /// <summary>
         /// SSO header key
         /// </summary>
-        public string? HeaderKey { get; set; }
+        [Required(ErrorMessage = "Password is required")]
+        public string? Password { get; set; }
     }
 }

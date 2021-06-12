@@ -41,8 +41,4 @@
 		<ProjectReference Include="..\NIOC.SampleStorage.Client.Service\NIOC.SampleStorage.Client.Service.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="wwwroot\images\main-page\" />
-	</ItemGroup>
-
 </Project>
