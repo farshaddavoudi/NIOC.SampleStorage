@@ -10,6 +10,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Pages\UserRolesPage.razor~RF9caac02.TMP" />
 	  <None Remove="Shared\NavMenu.razor~RF2979e4a.TMP" />
 	</ItemGroup>
 

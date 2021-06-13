@@ -141,9 +141,9 @@ namespace NIOC.SampleStorage.Client.Web.Implementations
             {
                 new Claim(ClaimTypes.Name, $"{customProps!.FirstName} {customProps.LastName}"),
                 new Claim(ClaimTypes.NameIdentifier, primarySidDto?.UserDomainName!),
-                new Claim(AppConstants.Claims.PersonnelCode, customProps.PersonnelCode!),
-                new Claim(AppConstants.Claims.UnitName, customProps.UnitName ?? "نامشخص"),
-                new Claim(AppConstants.Claims.JobTitle, customProps.JobTitle ?? "نامشخص")
+                new Claim("PersonnelCode", customProps.PersonnelCode!),
+                new Claim("UnitName", customProps.UnitName ?? "نامشخص"),
+                //new Claim(AppConstants.Claims.JobTitle, customProps.JobTitle ?? "نامشخص")
             };
 
             var roles = customProps.Roles?.DeserializeToModel<List<string>>();

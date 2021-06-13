@@ -1,0 +1,143 @@
+﻿@page "/user-roles"
+
+<TopBar PageName="User Roles" />
+
+<TelerikGrid Data=@MyData EditMode="@GridEditMode.Inline" Pageable="true" Height="500px"
+             OnUpdate="@UpdateHandler" OnEdit="@EditHandler" OnDelete="@DeleteHandler" OnCreate="@CreateHandler" OnCancel="@CancelHandler">
+    <GridToolBar>
+        <GridCommandButton Command="Add" Icon="add">Add User Role</GridCommandButton>
+    </GridToolBar>
+    <GridColumns>
+        <GridColumn Field=@nameof(UserRoleDto.Id) Title="Id" Editable="false" />
+        <GridColumn Field=@nameof(UserRoleDto.UserDomainName) Title="User Domain Name" />
+        <GridColumn Field=@nameof(UserRoleDto.RoleName) Title="Role Name" />
+        <GridCommandColumn>
+            <GridCommandButton Command="Save" Icon="save" ShowInEdit="true">Update</GridCommandButton>
+            <GridCommandButton Command="Edit" Icon="edit">Edit</GridCommandButton>
+            <GridCommandButton Command="Delete" Icon="delete">Delete</GridCommandButton>
+            <GridCommandButton Command="Cancel" Icon="cancel" ShowInEdit="true">Cancel</GridCommandButton>
+        </GridCommandColumn>
+    </GridColumns>
+</TelerikGrid>
+
+@code {
+    void EditHandler(GridCommandEventArgs args)
+    {
+        UserRoleDto item = (UserRoleDto)args.Item;
+
+        // prevent opening for edit based on condition
+        if (item.Id < 3)
+        {
+            args.IsCancelled = true;// the general approach for cancelling an event
+        }
+
+        Console.WriteLine("Edit event is fired.");
+    }
+
+    async Task UpdateHandler(GridCommandEventArgs args)
+    {
+        UserRoleDto item = (UserRoleDto)args.Item;
+
+        // perform actual data source operations here through your service
+        await MyService.Update(item);
+
+        // update the local view-model data with the service data
+        await GetGridData();
+
+        Console.WriteLine("Update event is fired.");
+    }
+
+    async Task DeleteHandler(GridCommandEventArgs args)
+    {
+        UserRoleDto item = (UserRoleDto)args.Item;
+
+        // perform actual data source operation here through your service
+        await MyService.Delete(item);
+
+        // update the local view-model data with the service data
+        await GetGridData();
+
+        Console.WriteLine("Delete event is fired.");
+    }
+
+    async Task CreateHandler(GridCommandEventArgs args)
+    {
+        UserRoleDto item = (UserRoleDto)args.Item;
+
+        // perform actual data source operation here through your service
+        await MyService.Create(item);
+
+        // update the local view-model data with the service data
+        await GetGridData();
+
+        Console.WriteLine("Create event is fired.");
+    }
+
+    async Task CancelHandler(GridCommandEventArgs args)
+    {
+        UserRoleDto item = (UserRoleDto)args.Item;
+
+        // if necessary, perform actual data source operation here through your service
+
+        Console.WriteLine("Cancel event is fired.");
+    }
+
+
+
+    public List<UserRoleDto> MyData { get; set; }
+
+    async Task GetGridData()
+    {
+        MyData = await MyService.Read();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetGridData();
+    }
+
+    // the following static class mimics an actual data service that handles the actual data source
+    // replace it with your actual service through the DI, this only mimics how the API can look like and works for this standalone page
+    public static class MyService
+    {
+        private static List<UserRoleDto> _data { get; set; } = new List<UserRoleDto>();
+
+        public static async Task Create(UserRoleDto itemToInsert)
+        {
+            itemToInsert.Id = _data.Count + 1;
+            _data.Insert(0, itemToInsert);
+        }
+
+        public static async Task<List<UserRoleDto>> Read()
+        {
+            if (_data.Count < 1)
+            {
+                for (int i = 1; i < 50; i++)
+                {
+                    _data.Add(new UserRoleDto()
+                    {
+                        Id = i,
+                        UserDomainName = "domain" + i.ToString(),
+                        RoleName = "role" + i
+                    });
+                }
+            }
+
+            return await Task.FromResult(_data);
+        }
+
+        public static async Task Update(UserRoleDto itemToUpdate)
+        {
+            var index = _data.FindIndex(i => i.Id == itemToUpdate.Id);
+            if (index != -1)
+            {
+                _data[index] = itemToUpdate;
+            }
+        }
+
+        public static async Task Delete(UserRoleDto itemToDelete)
+        {
+            _data.Remove(itemToDelete);
+        }
+    }
+}

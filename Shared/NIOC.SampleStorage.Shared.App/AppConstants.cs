@@ -29,19 +29,6 @@ namespace NIOC.SampleStorage.Shared.App
             public static readonly string Secret = "secret";
         }
 
-        public static class Roles
-        {
-            public const string Administrator = nameof(Administrator);
-        }
-
-        public static class Claims
-        {
-            public static readonly string PersonnelCode = nameof(PersonnelCode);
-            public static readonly string DomainName = nameof(DomainName);
-            public static readonly string UnitName = nameof(UnitName);
-            public static readonly string JobTitle = nameof(JobTitle);
-        }
-
         public static class Regex
         {
             public const string EmailRegex = @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$";
